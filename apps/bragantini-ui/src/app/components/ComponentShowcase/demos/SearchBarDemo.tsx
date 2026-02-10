@@ -4,6 +4,37 @@ import styles from './Demo.module.css';
 
 export default function SearchBarDemo() {
   const [searchValue, setSearchValue] = useState('');
+  const [searchValueLight, setSearchValueLight] = useState('');
+
+  const renderSearchBar = (value: string, onChange: (val: string) => void) => (
+    <div className={styles.searchBarContainer}>
+      <div className={styles.searchBar}>
+        <span className={styles.searchIcon}>🔎︎</span>
+        <input
+          type="text"
+          placeholder="Cerca componenti..."
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          className={styles.searchInput}
+        />
+        {value && (
+          <button 
+            className={styles.clearButton}
+            onClick={() => onChange('')}
+          >
+            ✕
+          </button>
+        )}
+      </div>
+      {value && (
+        <div className={styles.searchResults}>
+          <div className={styles.searchResult}>Risultato 1: {value}</div>
+          <div className={styles.searchResult}>Risultato 2: {value}</div>
+          <div className={styles.searchResult}>Risultato 3: {value}</div>
+        </div>
+      )}
+    </div>
+  );
 
   return (
     <div className={styles.demo}>
@@ -16,32 +47,17 @@ export default function SearchBarDemo() {
       </p>
       
       <div className={styles.demoPreview}>
-        <div className={styles.searchBarContainer}>
-          <div className={styles.searchBar}>
-            <span className={styles.searchIcon}>🔎︎</span>
-            <input
-              type="text"
-              placeholder="Cerca componenti..."
-              value={searchValue}
-              onChange={(e) => setSearchValue(e.target.value)}
-              className={styles.searchInput}
-            />
-            {searchValue && (
-              <button 
-                className={styles.clearButton}
-                onClick={() => setSearchValue('')}
-              >
-                ✕
-              </button>
-            )}
+        <div className={styles.previewVariant}>
+          <div className={styles.variantLabel}>Dark</div>
+          <div className={styles.variantContent}>
+            {renderSearchBar(searchValue, setSearchValue)}
           </div>
-          {searchValue && (
-            <div className={styles.searchResults}>
-              <div className={styles.searchResult}>Risultato 1: {searchValue}</div>
-              <div className={styles.searchResult}>Risultato 2: {searchValue}</div>
-              <div className={styles.searchResult}>Risultato 3: {searchValue}</div>
-            </div>
-          )}
+        </div>
+        <div className={`${styles.previewVariant} ${styles.light}`}>
+          <div className={styles.variantLabel}>Light</div>
+          <div className={styles.variantContent}>
+            {renderSearchBar(searchValueLight, setSearchValueLight)}
+          </div>
         </div>
       </div>
 

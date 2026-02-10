@@ -2,6 +2,27 @@
 import styles from './Demo.module.css';
 
 export default function ButtonDemo() {
+  const renderButtons = () => (
+    <>
+      <div className={styles.buttonGroup}>
+        <button className={`${styles.button} ${styles.primary}`}>Primary</button>
+        <button className={`${styles.button} ${styles.secondary}`}>Secondary</button>
+        <button className={`${styles.button} ${styles.outline}`}>Outline</button>
+        <button className={`${styles.button} ${styles.ghost}`}>Ghost</button>
+      </div>
+      <div className={styles.buttonGroup}>
+        <button className={`${styles.button} ${styles.primary} ${styles.small}`}>Small</button>
+        <button className={`${styles.button} ${styles.primary} ${styles.medium}`}>Medium</button>
+        <button className={`${styles.button} ${styles.primary} ${styles.large}`}>Large</button>
+      </div>
+      <div className={styles.buttonGroup}>
+        <button className={`${styles.button} ${styles.primary}`} disabled>Disabled</button>
+        <button className={`${styles.button} ${styles.danger}`}>Danger</button>
+        <button className={`${styles.button} ${styles.success}`}>Success</button>
+      </div>
+    </>
+  );
+
   return (
     <div className={styles.demo}>
       <div className={styles.demoHeader}>
@@ -13,21 +34,17 @@ export default function ButtonDemo() {
       </p>
       
       <div className={styles.demoPreview}>
-        <div className={styles.buttonGroup}>
-          <button className={`${styles.button} ${styles.primary}`}>Primary</button>
-          <button className={`${styles.button} ${styles.secondary}`}>Secondary</button>
-          <button className={`${styles.button} ${styles.outline}`}>Outline</button>
-          <button className={`${styles.button} ${styles.ghost}`}>Ghost</button>
+        <div className={styles.previewVariant}>
+          <div className={styles.variantLabel}>Dark</div>
+          <div className={styles.variantContent}>
+            {renderButtons()}
+          </div>
         </div>
-        <div className={styles.buttonGroup}>
-          <button className={`${styles.button} ${styles.primary} ${styles.small}`}>Small</button>
-          <button className={`${styles.button} ${styles.primary} ${styles.medium}`}>Medium</button>
-          <button className={`${styles.button} ${styles.primary} ${styles.large}`}>Large</button>
-        </div>
-        <div className={styles.buttonGroup}>
-          <button className={`${styles.button} ${styles.primary}`} disabled>Disabled</button>
-          <button className={`${styles.button} ${styles.danger}`}>Danger</button>
-          <button className={`${styles.button} ${styles.success}`}>Success</button>
+        <div className={`${styles.previewVariant} ${styles.light}`}>
+          <div className={styles.variantLabel}>Light</div>
+          <div className={styles.variantContent}>
+            {renderButtons()}
+          </div>
         </div>
       </div>
 

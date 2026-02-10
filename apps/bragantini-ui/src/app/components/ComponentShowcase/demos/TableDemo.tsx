@@ -8,6 +8,39 @@ export default function TableDemo() {
     { id: 3, nome: 'Giuseppe Verdi', ruolo: 'Manager', stato: 'Inattivo' },
   ];
 
+  const renderTable = () => (
+    <div className={styles.tableContainer}>
+      <table className={styles.table}>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Ruolo</th>
+            <th>Stato</th>
+            <th>Azioni</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((row) => (
+            <tr key={row.id}>
+              <td>{row.id}</td>
+              <td>{row.nome}</td>
+              <td>{row.ruolo}</td>
+              <td>
+                <span className={row.stato === 'Attivo' ? styles.statusActive : styles.statusInactive}>
+                  {row.stato}
+                </span>
+              </td>
+              <td>
+                <button className={styles.tableButton}>Modifica</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+
   return (
     <div className={styles.demo}>
       <div className={styles.demoHeader}>
@@ -19,35 +52,17 @@ export default function TableDemo() {
       </p>
       
       <div className={styles.demoPreview}>
-        <div className={styles.tableContainer}>
-          <table className={styles.table}>
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Ruolo</th>
-                <th>Stato</th>
-                <th>Azioni</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.map((row) => (
-                <tr key={row.id}>
-                  <td>{row.id}</td>
-                  <td>{row.nome}</td>
-                  <td>{row.ruolo}</td>
-                  <td>
-                    <span className={row.stato === 'Attivo' ? styles.statusActive : styles.statusInactive}>
-                      {row.stato}
-                    </span>
-                  </td>
-                  <td>
-                    <button className={styles.tableButton}>Modifica</button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className={styles.previewVariant}>
+          <div className={styles.variantLabel}>Dark</div>
+          <div className={styles.variantContent}>
+            {renderTable()}
+          </div>
+        </div>
+        <div className={`${styles.previewVariant} ${styles.light}`}>
+          <div className={styles.variantLabel}>Light</div>
+          <div className={styles.variantContent}>
+            {renderTable()}
+          </div>
         </div>
       </div>
 
