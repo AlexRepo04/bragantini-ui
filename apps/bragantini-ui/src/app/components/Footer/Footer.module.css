@@ -1,8 +1,9 @@
 /* apps/bragantini-ui/src/app/components/Footer/Footer.module.css */
 .footer {
-  background: #1a202c;
-  color: #e2e8f0;
+  background: #1b263b;
+  color: #e0e1dd;
   padding: 60px 20px 20px;
+  border-top: 2px solid #415a77;
 }
 
 .container {
@@ -20,20 +21,14 @@
 .section h3 {
   font-size: 1.5rem;
   margin-bottom: 12px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #e0e1dd;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.section h4 {
-  font-size: 1rem;
-  margin-bottom: 16px;
-  color: white;
-}
-
 .section p {
-  color: #a0aec0;
+  color: #778da9;
   line-height: 1.6;
 }
 
@@ -48,20 +43,20 @@
 }
 
 .section a {
-  color: #a0aec0;
+  color: #778da9;
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .section a:hover {
-  color: #667eea;
+  color: #415a77;
 }
 
 .bottom {
   padding-top: 20px;
-  border-top: 1px solid #2d3748;
+  border-top: 1px solid #415a77;
   text-align: center;
-  color: #a0aec0;
+  color: #778da9;
 }
 
 @media (max-width: 768px) {

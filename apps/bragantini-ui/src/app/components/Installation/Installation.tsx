@@ -10,7 +10,7 @@ export default function Installation() {
           <pre>
             <code>npm install bragantini-ui</code>
           </pre>
-          <button className={styles.copyButton} onClick={() => navigator.clipboard.writeText('npm install bragantini-ui')}>
+          <button className={styles.copyButton} onClick={() => window.navigator.clipboard.writeText('npm install bragantini-ui')}>
             Copia
           </button>
         </div>
@@ -19,7 +19,7 @@ export default function Installation() {
           <pre>
             <code>yarn add bragantini-ui</code>
           </pre>
-          <button className={styles.copyButton} onClick={() => navigator.clipboard.writeText('yarn add bragantini-ui')}>
+          <button className={styles.copyButton} onClick={() => window.navigator.clipboard.writeText('yarn add bragantini-ui')}>
             Copia
           </button>
         </div>

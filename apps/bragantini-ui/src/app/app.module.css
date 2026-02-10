@@ -1,5 +1,5 @@
 /* apps/bragantini-ui/src/app/app.module.css */
 .app {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 50%, #415a77 100%);
 }

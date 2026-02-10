@@ -7,9 +7,9 @@ export default function Header() {
       <div className={styles.container}>
         <h1 className={styles.logo}>Bragantini UI</h1>
         <nav className={styles.nav}>
-          <a href="#components">Componenti</a>
           <a href="#installation">Installazione</a>
-          <a href="https://github.com/yourusername/bragantini-ui" target="_blank" rel="noopener noreferrer">
+          <a href="#components">Componenti</a>
+          <a href="https://github.com/fullstacchioni-2426/bragantini-ui" target="_blank" rel="noopener noreferrer">
             GitHub
           </a>
         </nav>

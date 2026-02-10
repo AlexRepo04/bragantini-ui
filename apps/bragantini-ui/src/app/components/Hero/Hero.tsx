@@ -11,22 +11,17 @@ export default function Hero() {
         </p>
         <div className={styles.features}>
           <div className={styles.feature}>
-            <span className={styles.icon}>🎨</span>
+            <span className={styles.icon}>𖡎</span>
             <h3>Design Moderno</h3>
             <p>Componenti eleganti con animazioni fluide</p>
           </div>
           <div className={styles.feature}>
-            <span className={styles.icon}>⚡</span>
+            <span className={styles.icon}>⚡︎ ⚡︎</span>
             <h3>Performante</h3>
             <p>Ottimizzato per velocità e bundle size ridotto</p>
           </div>
           <div className={styles.feature}>
-            <span className={styles.icon}>♿</span>
-            <h3>Accessibile</h3>
-            <p>Conforme agli standard ARIA</p>
-          </div>
-          <div className={styles.feature}>
-            <span className={styles.icon}>🎯</span>
+            <span className={styles.icon}>𖣠</span>
             <h3>TypeScript</h3>
             <p>Type-safe con autocompletamento completo</p>
           </div>

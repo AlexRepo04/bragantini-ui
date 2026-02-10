@@ -4,10 +4,53 @@ import styles from './Demo.module.css';
 
 export default function CalendarDemo() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [currentMonth, setCurrentMonth] = useState(1); // Febbraio
+  const [currentYear, setCurrentYear] = useState(2026);
   
-  const daysInMonth = 31;
-  const firstDayOfWeek = 3; // Mercoledì
+  const today = new Date(2026, 1, 10); // 10 febbraio 2026
+
+  const months = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 
+                  'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
+
+  // Calcola i giorni nel mese
+  const getDaysInMonth = (month: number, year: number) => {
+    return new Date(year, month + 1, 0).getDate();
+  };
+
+  // Calcola il primo giorno della settimana (0 = domenica, 1 = lunedì...)
+  const getFirstDayOfWeek = (month: number, year: number) => {
+    return new Date(year, month, 1).getDay();
+  };
+
+  const daysInMonth = getDaysInMonth(currentMonth, currentYear);
+  const firstDayOfWeek = getFirstDayOfWeek(currentMonth, currentYear);
   const days = Array.from({ length: daysInMonth }, (_, i) => i + 1);
+
+  const handlePrevMonth = () => {
+    if (currentMonth === 0) {
+      setCurrentMonth(11);
+      setCurrentYear(currentYear - 1);
+    } else {
+      setCurrentMonth(currentMonth - 1);
+    }
+  };
+
+  const handleNextMonth = () => {
+    if (currentMonth === 11) {
+      setCurrentMonth(0);
+      setCurrentYear(currentYear + 1);
+    } else {
+      setCurrentMonth(currentMonth + 1);
+    }
+  };
+
+  const isToday = (day: number) => {
+    return day === today.getDate() && currentMonth === today.getMonth() && currentYear === today.getFullYear();
+  };
+
+  const isSelected = (day: number) => {
+    return selectedDate && selectedDate.getDate() === day && selectedDate.getMonth() === currentMonth && selectedDate.getFullYear() === currentYear;
+  };
 
   return (
     <div className={styles.demo}>
@@ -22,9 +65,9 @@ export default function CalendarDemo() {
       <div className={styles.demoPreview}>
         <div className={styles.calendar}>
           <div className={styles.calendarHeader}>
-            <button className={styles.calendarNav}>‹</button>
-            <h4>Gennaio 2026</h4>
-            <button className={styles.calendarNav}>›</button>
+            <button className={styles.calendarNav} onClick={handlePrevMonth}>‹</button>
+            <h4>{months[currentMonth]} {currentYear}</h4>
+            <button className={styles.calendarNav} onClick={handleNextMonth}>›</button>
           </div>
           <div className={styles.calendarGrid}>
             {['Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab', 'Dom'].map((day) => (
@@ -36,8 +79,8 @@ export default function CalendarDemo() {
             {days.map((day) => (
               <button
                 key={day}
-                className={`${styles.calendarDay} ${day === 15 ? styles.calendarDaySelected : ''}`}
-                onClick={() => setSelectedDate(new Date(2026, 0, day))}
+                className={`${styles.calendarDay} ${isSelected(day) ? styles.calendarDaySelected : ''} ${isToday(day) ? styles.calendarDayToday : ''}`}
+                onClick={() => setSelectedDate(new Date(currentYear, currentMonth, day))}
               >
                 {day}
               </button>

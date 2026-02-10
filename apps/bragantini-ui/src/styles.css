@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles with color palette */
+:root {
+  --color-dark-primary: #0d1b2a;
+  --color-dark-secondary: #1b263b;
+  --color-medium: #415a77;
+  --color-light: #778da9;
+  --color-text: #e0e1dd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d1b2a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #415a77;
+  border-radius: 5px;
+  border: 2px solid #1b263b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #778da9;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-color: #415a77 #0d1b2a;
+  scrollbar-width: thin;
+}

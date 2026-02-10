@@ -1,9 +1,10 @@
 /* apps/bragantini-ui/src/app/components/ComponentShowcase/demos/Demo.module.css */
 .demo {
-  background: white;
+  background: rgba(27, 38, 59, 0.9);
   border-radius: 12px;
   padding: 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  border: 2px solid #415a77;
 }
 
 .demoHeader {
@@ -15,13 +16,13 @@
 
 .demoHeader h3 {
   font-size: 1.75rem;
-  color: #1a202c;
+  color: #e0e1dd;
   margin: 0;
 }
 
 .badge {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: linear-gradient(135deg, #415a77 0%, #778da9 100%);
+  color: #e0e1dd;
   padding: 4px 12px;
   border-radius: 20px;
   font-size: 0.75rem;
@@ -29,12 +30,12 @@
 }
 
 .demoDescription {
-  color: #4a5568;
+  color: #778da9;
   margin-bottom: 24px;
 }
 
 .demoPreview {
-  background: #f7fafc;
+  background: rgba(13, 27, 42, 0.6);
   border-radius: 8px;
   padding: 30px;
   margin-bottom: 24px;
@@ -42,13 +43,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid #415a77;
 }
 
 .demoCode {
-  background: #1a202c;
+  background: #0d1b2a;
   border-radius: 8px;
   padding: 20px;
   overflow-x: auto;
+  border: 1px solid #415a77;
 }
 
 .demoCode pre {
@@ -56,7 +59,7 @@
 }
 
 .demoCode code {
-  color: #e2e8f0;
+  color: #778da9;
   font-family: 'Courier New', monospace;
   font-size: 0.875rem;
   line-height: 1.6;
@@ -81,39 +84,40 @@
 }
 
 .button.primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: linear-gradient(135deg, #415a77 0%, #778da9 100%);
+  color: #e0e1dd;
 }
 
 .button.primary:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 6px 16px rgba(65, 90, 119, 0.5);
 }
 
 .button.secondary {
-  background: #4a5568;
-  color: white;
+  background: #1b263b;
+  color: #e0e1dd;
+  border: 2px solid #415a77;
 }
 
 .button.outline {
   background: transparent;
-  border: 2px solid #667eea;
-  color: #667eea;
+  border: 2px solid #415a77;
+  color: #778da9;
 }
 
 .button.ghost {
   background: transparent;
-  color: #667eea;
+  color: #778da9;
 }
 
 .button.danger {
-  background: #f56565;
-  color: white;
+  background: #8b3a3a;
+  color: #e0e1dd;
 }
 
 .button.success {
-  background: #48bb78;
-  color: white;
+  background: #3a6e4d;
+  color: #e0e1dd;
 }
 
 .button.small {
@@ -146,8 +150,8 @@
 .searchBar {
   display: flex;
   align-items: center;
-  background: white;
-  border: 2px solid #e2e8f0;
+  background: rgba(27, 38, 59, 0.8);
+  border: 2px solid #415a77;
   border-radius: 8px;
   padding: 12px 16px;
   gap: 8px;
@@ -155,11 +159,13 @@
 }
 
 .searchBar:focus-within {
-  border-color: #667eea;
+  border-color: #778da9;
+  box-shadow: 0 0 0 3px rgba(119, 141, 169, 0.1);
 }
 
 .searchIcon {
   font-size: 1.25rem;
+  color: #778da9;
 }
 
 .searchInput {
@@ -167,13 +173,18 @@
   border: none;
   outline: none;
   font-size: 1rem;
-  color: #1a202c;
+  color: #e0e1dd;
+  background: transparent;
+}
+
+.searchInput::placeholder {
+  color: #778da9;
 }
 
 .clearButton {
   background: transparent;
   border: none;
-  color: #a0aec0;
+  color: #778da9;
   cursor: pointer;
   font-size: 1.25rem;
   padding: 0;
@@ -182,6 +193,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: color 0.2s;
+}
+
+.clearButton:hover {
+  color: #415a77;
 }
 
 .searchResults {
@@ -189,10 +205,10 @@
   top: calc(100% + 8px);
   left: 0;
   right: 0;
-  background: white;
-  border: 1px solid #e2e8f0;
+  background: #1b263b;
+  border: 2px solid #415a77;
   border-radius: 8px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   overflow: hidden;
 }
 
@@ -200,10 +216,11 @@
   padding: 12px 16px;
   cursor: pointer;
   transition: background 0.2s;
+  color: #e0e1dd;
 }
 
 .searchResult:hover {
-  background: #f7fafc;
+  background: rgba(65, 90, 119, 0.3);
 }
 
 /* Table styles */
@@ -215,36 +232,37 @@
 .table {
   width: 100%;
   border-collapse: collapse;
-  background: white;
+  background: rgba(27, 38, 59, 0.8);
   border-radius: 8px;
   overflow: hidden;
+  border: 2px solid #415a77;
 }
 
 .table thead {
-  background: #f7fafc;
+  background: rgba(13, 27, 42, 0.8);
 }
 
 .table th {
   padding: 16px;
   text-align: left;
   font-weight: 600;
-  color: #1a202c;
-  border-bottom: 2px solid #e2e8f0;
+  color: #e0e1dd;
+  border-bottom: 2px solid #415a77;
 }
 
 .table td {
   padding: 16px;
-  border-bottom: 1px solid #e2e8f0;
-  color: #4a5568;
+  border-bottom: 1px solid #415a77;
+  color: #778da9;
 }
 
 .table tbody tr:hover {
-  background: #f7fafc;
+  background: rgba(65, 90, 119, 0.2);
 }
 
 .statusActive {
-  background: #c6f6d5;
-  color: #22543d;
+  background: rgba(58, 110, 77, 0.8);
+  color: #a3d9b1;
   padding: 4px 12px;
   border-radius: 12px;
   font-size: 0.75rem;
@@ -252,8 +270,8 @@
 }
 
 .statusInactive {
-  background: #fed7d7;
-  color: #742a2a;
+  background: rgba(139, 58, 58, 0.8);
+  color: #f5b6b6;
   padding: 4px 12px;
   border-radius: 12px;
   font-size: 0.75rem;
@@ -262,8 +280,8 @@
 
 .tableButton {
   background: transparent;
-  border: 1px solid #667eea;
-  color: #667eea;
+  border: 1px solid #415a77;
+  color: #778da9;
   padding: 6px 12px;
   border-radius: 4px;
   cursor: pointer;
@@ -272,17 +290,18 @@
 }
 
 .tableButton:hover {
-  background: #667eea;
-  color: white;
+  background: #415a77;
+  color: #e0e1dd;
 }
 
 /* Calendar styles */
 .calendar {
-  background: white;
+  background: rgba(27, 38, 59, 0.9);
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   max-width: 350px;
+  border: 2px solid #415a77;
 }
 
 .calendarHeader {
@@ -295,35 +314,38 @@
 .calendarHeader h4 {
   margin: 0;
   font-size: 1.125rem;
-  color: #1a202c;
+  color: #e0e1dd;
 }
 
 .calendarNav {
   background: transparent;
   border: none;
   font-size: 1.5rem;
-  color: #667eea;
+  color: #778da9;
   cursor: pointer;
   padding: 4px 8px;
   border-radius: 4px;
-  transition: background 0.2s;
+  transition: all 0.2s;
 }
 
 .calendarNav:hover {
-  background: #f7fafc;
+  background: rgba(65, 90, 119, 0.3);
+  color: #415a77;
 }
 
 .calendarGrid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: 40px;
   gap: 4px;
+  min-height: 280px;
 }
 
 .calendarDayName {
   text-align: center;
   font-size: 0.75rem;
   font-weight: 600;
-  color: #4a5568;
+  color: #778da9;
   padding: 8px 4px;
 }
 
@@ -333,34 +355,55 @@
 
 .calendarDay {
   aspect-ratio: 1;
-  border: none;
+  border: 2px solid transparent;
   background: transparent;
   border-radius: 8px;
   cursor: pointer;
   font-size: 0.875rem;
-  color: #1a202c;
+  color: #e0e1dd;
   transition: all 0.2s;
+  font-weight: 500;
 }
 
 .calendarDay:hover {
-  background: #f7fafc;
+  background: rgba(65, 90, 119, 0.3);
+  border-color: #778da9;
 }
 
 .calendarDaySelected {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: linear-gradient(135deg, #415a77 0%, #778da9 100%);
+  color: #e0e1dd;
+  font-weight: 700;
+  border-color: #e0e1dd;
+  box-shadow: 0 0 12px rgba(65, 90, 119, 0.5), inset 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
 .calendarDaySelected:hover {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #415a77 0%, #778da9 100%);
+  box-shadow: 0 0 16px rgba(65, 90, 119, 0.7), inset 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.calendarDayToday {
+  border-color: #e0e1dd;
+  border-width: 2px;
+  font-weight: 700;
+}
+
+.calendarDayToday:not(.calendarDaySelected) {
+  background: rgba(120, 141, 169, 0.3);
+}
+
+.calendarDayToday.calendarDaySelected {
+  background: linear-gradient(135deg, #415a77 0%, #778da9 100%);
+  border-color: #e0e1dd;
 }
 
 .calendarFooter {
   margin-top: 16px;
   padding-top: 16px;
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid #415a77;
   text-align: center;
-  color: #4a5568;
+  color: #778da9;
   font-size: 0.875rem;
 }
 
@@ -371,16 +414,17 @@
 }
 
 .accordionItem {
-  border: 1px solid #e2e8f0;
+  border: 2px solid #415a77;
   border-radius: 8px;
   margin-bottom: 8px;
   overflow: hidden;
+  background: rgba(27, 38, 59, 0.6);
 }
 
 .accordionHeader {
   width: 100%;
   padding: 16px 20px;
-  background: white;
+  background: transparent;
   border: none;
   display: flex;
   justify-content: space-between;
@@ -388,17 +432,17 @@
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
-  color: #1a202c;
+  color: #e0e1dd;
   transition: background 0.2s;
 }
 
 .accordionHeader:hover {
-  background: #f7fafc;
+  background: rgba(65, 90, 119, 0.2);
 }
 
 .accordionIcon {
   transition: transform 0.3s;
-  color: #667eea;
+  color: #778da9;
   font-size: 0.75rem;
 }
 
@@ -410,7 +454,7 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-out;
-  background: #f7fafc;
+  background: rgba(13, 27, 42, 0.4);
 }
 
 .accordionContentOpen {
@@ -420,6 +464,6 @@
 .accordionContent p {
   padding: 16px 20px;
   margin: 0;
-  color: #4a5568;
+  color: #778da9;
   line-height: 1.6;
 }

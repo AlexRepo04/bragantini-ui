@@ -18,7 +18,7 @@ export default function SearchBarDemo() {
       <div className={styles.demoPreview}>
         <div className={styles.searchBarContainer}>
           <div className={styles.searchBar}>
-            <span className={styles.searchIcon}>🔍</span>
+            <span className={styles.searchIcon}>🔎︎</span>
             <input
               type="text"
               placeholder="Cerca componenti..."
